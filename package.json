@@ -1,0 +1,13 @@
+{
+  "name": "mobile-stylesheet",
+  "version": "0.0.1",
+  "description": "366ec mobile stylesheet",
+  "author": "mm",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-cssmin": "^0.7.0",
+    "grunt-contrib-less": "^0.12.0"
+  }
+}

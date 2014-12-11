@@ -1,0 +1,28 @@
+.make-avg-grid(@counter){
+  .@{ns}avg-list@{counter} > * {
+    width: (100% / @counter);
+    .box-sizing();
+    &:nth-of-type(n) {
+      clear: none;
+    }
+    &:nth-of-type(@{counter}n+1) {
+      clear: both;
+    }
+  } 
+}
+.make-avg-grid(1);
+.make-avg-grid(2);
+.make-avg-grid(3);
+[class*="@{ns}avg-list"] {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  .clearfix();
+
+  > * {
+    display: block;
+    height: auto;
+    float: left;
+  }
+}
