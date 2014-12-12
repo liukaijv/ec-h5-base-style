@@ -1,3 +1,5 @@
+// avg-grid
+// via https://github.com/allmobilize/amazeui/blob/master/less/block-grid.less
 .make-avg-grid(@counter){
   .@{ns}avg-list@{counter} > * {
     width: (100% / @counter);
@@ -19,7 +21,6 @@
   margin: 0;
   list-style: none;
   .clearfix();
-
   > * {
     display: block;
     height: auto;
