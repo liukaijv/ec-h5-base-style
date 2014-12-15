@@ -1,6 +1,13 @@
 //  common classes
 .clearfix{
-	.clearfix();
+	&:before,
+	&:after {
+	content: " ";
+	display: table;
+	}
+	&:after {
+	clear: both;
+	}
 }
 .clear{
 	clear: both;
@@ -48,7 +55,8 @@
 	font-style: italic;
 }
 .none,
-.hide{
+.hide,
+[hidden]{
 	display: none;
 }
 .blk,
@@ -69,4 +77,14 @@
 }
 .img-preserve{
 	max-width: none;
+}
+.nowrap{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.truncate{	
+	word-wrap: normal; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }

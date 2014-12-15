@@ -29,8 +29,9 @@ module.exports = function(grunt) {
 				  paths: ["less"]
 				},
 				files: {
-					// 手机网站基础样式
+					// 手机网站基础样式					
 					"css/core.css": "less/core.less",
+					"css/font-awesome.css": "font-awesome/font-awesome.less",
 					// // 手机网站前台样式
 					// "css/h5pages.css": "less/h5pages.less",
 					// // 会员中心

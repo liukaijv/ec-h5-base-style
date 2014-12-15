@@ -1,5 +1,5 @@
 // table gird
-.table-gird{
+.table-row{
 	display: table;
 	width: 100%;
 	table-layout: fixed;
@@ -8,21 +8,28 @@
 	}
 }
 
+// make table row
+.table-row(){
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	&>*{
+		display: table;
+	}
+}
+
 //  flex gird
-.flex-box{
+.flex-row{
 	.display();
 }
 .flex{
-	.flex(1,0,0%);
+	.flex(1,1,0%);
 }
 .flex-h {
 	.flex-direction(row);
 }
 .flex-v {
 	.flex-direction(column);
-}
-.flex-fluid{
-	.flex(1,1,0%);
 }
 .flex-start{
 	.order(-1);

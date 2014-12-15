@@ -18,10 +18,10 @@ button {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga", "kern";
 }
 a {
   color: #0077dd;
+  text-decoration: none;
 }
 a:hover,
 a:focus {
@@ -344,7 +344,8 @@ hr {
   font-style: italic;
 }
 .none,
-.hide {
+.hide,
+[hidden] {
   display: none;
 }
 .blk,
@@ -366,15 +367,25 @@ hr {
 .img-preserve {
   max-width: none;
 }
-.table-gird {
+.nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.truncate {
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.table-row {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
-.table-gird .col {
+.table-row .col {
   display: table-cell;
 }
-.flex-box {
+.flex-row {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
@@ -386,10 +397,10 @@ hr {
 .flex {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -webkit-flex: 1 0 0%;
-  -moz-flex: 1 0 0%;
-  -ms-flex: 1 0 0%;
-  flex: 1 0 0%;
+  -webkit-flex: 1 1 0%;
+  -moz-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 .flex-h {
   -webkit-box-orient: horizontal;
@@ -410,14 +421,6 @@ hr {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-.flex-fluid {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-  -moz-flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
 }
 .flex-start {
   -webkit-box-ordinal-group: 0;
@@ -446,66 +449,101 @@ hr {
   -ms-order: 42;
   order: 42;
 }
-.app-avg-list1 > * {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.app-avg-list1 > *:nth-of-type(n) {
-  clear: none;
-}
-.app-avg-list1 > *:nth-of-type(1n + 1) {
-  clear: both;
-}
-.app-avg-list2 > * {
-  width: 50%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.app-avg-list2 > *:nth-of-type(n) {
-  clear: none;
-}
-.app-avg-list2 > *:nth-of-type(2n + 1) {
-  clear: both;
-}
-.app-avg-list3 > * {
-  width: 33.33333333%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.app-avg-list3 > *:nth-of-type(n) {
-  clear: none;
-}
-.app-avg-list3 > *:nth-of-type(3n + 1) {
-  clear: both;
-}
-[class*="app-avg-list"] {
+[class*="avg-list"] {
   display: block;
   padding: 0;
   margin: 0;
   list-style: none;
 }
-[class*="app-avg-list"]:before,
-[class*="app-avg-list"]:after {
+[class*="avg-list"]:before,
+[class*="avg-list"]:after {
   content: " ";
   display: table;
 }
-[class*="app-avg-list"]:after {
+[class*="avg-list"]:after {
   clear: both;
 }
-[class*="app-avg-list"]:before,
-[class*="app-avg-list"]:after {
+[class*="avg-list"]:before,
+[class*="avg-list"]:after {
   content: " ";
   display: table;
 }
-[class*="app-avg-list"]:after {
+[class*="avg-list"]:after {
   clear: both;
 }
-[class*="app-avg-list"] > * {
+[class*="avg-list"] > li {
   display: block;
   height: auto;
   float: left;
+}
+.app-header {
+  height: 44px;
+  position: relative;
+  z-index: 10;
+  background-color: #345;
+  -webkit-box-shadow: inset 0 -1px 0 #234,0 1px 0 rgba(0,0,0,0.1),0 1px 7px rgba(0,0,0,0.18);
+  box-shadow: inset 0 -1px 0 #234,0 1px 0 rgba(0,0,0,0.1),0 1px 7px rgba(0,0,0,0.18);
+  color: #f3f4f5;
+}
+.app-header:before,
+.app-header:after {
+  content: " ";
+  display: table;
+}
+.app-header:after {
+  clear: both;
+}
+.app-header:before,
+.app-header:after {
+  content: " ";
+  display: table;
+}
+.app-header:after {
+  clear: both;
+}
+.app-header .app-title {
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 12;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 44px;
+  right: 44px;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  line-height: 44px;
+}
+.app-header .app-header-btn,
+.app-header .app-header-btn-sm {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 11;
+  font-size: 16px;
+  color: #f3f4f5;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+}
+.app-header .app-header-btn {
+  height: 44px;
+  line-height: 44px;
+  min-width: 44px;
+}
+.app-header .app-header-btn[data-back] i {
+  font-size: 32px;
+  width: 44px;
+  line-height: 44px;
+}
+.app-header .app-header-btn-sm {
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  padding: 0 8px;
 }
