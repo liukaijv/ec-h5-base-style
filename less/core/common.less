@@ -78,13 +78,20 @@
 .img-preserve{
 	max-width: none;
 }
-.nowrap{
+.text-nowrap{
 	overflow: hidden;
 	white-space: nowrap;
 }
-.truncate{	
+.text-truncate{	
 	word-wrap: normal; 
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+.text-break{
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
 }
