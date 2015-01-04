@@ -1,20 +1,21 @@
 // table gird
-.table-row{
-	display: table;
-	width: 100%;
-	table-layout: fixed;
-	.col{
-		display: table-cell;
-	}
-}
+// .table-row{
+// 	display: table;
+// 	width: 100%;
+// 	table-layout: fixed;
+// 	.col{
+// 		display: table-cell;
+// 	}
+// }
 
 // make table row
 .table-row(){
 	display: table;
 	width: 100%;
 	table-layout: fixed;
+	&>.col,
 	&>*{
-		display: table;
+		display: table-cell;
 	}
 }
 

@@ -1,0 +1,68 @@
+@panel-zindex:100;
+@panel-overlay-bg:rgba(0,0,0,0.15);
+@panel-bar-width: 30%;
+@panel-bar-bg: #333;
+@panel-bar-border-color: darken(@panel-bar-bg, 5%);
+
+.@{ns}panel {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: @panel-zindex;
+  background: @panel-overlay-bg;
+
+  &.@{ns}active {
+    display: block;
+  }
+}
+
+.@{ns}panel-page {
+  position: fixed;
+  .transition(margin-left 0.3s ease-in-out);  
+}
+
+.@{ns}panel-bar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  .translate(-100%, 0);
+  z-index: @panel-zindex+1;
+  width: @panel-bar-width;
+  max-width: 100%;
+  background: @panel-bar-bg;
+
+  overflow-y: auto;  /* scrollable */
+  -webkit-overflow-scrolling: touch; /* scrollable */
+  
+  .transition(transform 0.3s ease-in-out); 
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background: @panel-bar-border-color;
+    // box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
+  } 
+}
+
+.@{ns}panel.@{ns}active .@{ns}panel-bar.@{ns}-active {
+  .translate(0, 0);
+}
+
+.@{ns}panel-bar-flip {
+  left: auto;
+  right: 0;
+  .translate(100%, 0);
+  &:after {
+    right: auto;
+    left: 0;
+  }
+}

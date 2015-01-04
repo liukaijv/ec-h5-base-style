@@ -1,14 +1,16 @@
 // scaffold
 // 基础结构
 
+// 头部
 .@{ns}header{
+	// .display();
 	.clearfix();
 	height: @header-height;
 	position: relative;
 	z-index: @header-zindex;
-	background-color: #345;
-	.box-shadow(~'inset 0 -1px 0 #234,0 1px 0 rgba(0,0,0,0.1),0 1px 7px rgba(0,0,0,0.18)');	
-	color: #f3f4f5;
+	background-color: #000;
+	box-shadow: inset 0 -1px 0 #234,0 1px 0 rgba(0,0,0,0.1),0 1px 7px rgba(0,0,0,0.18);
+	color: #f3f4f5;	
 	.@{ns}title{
 		font-size: 18px;
 		font-weight: bold;
@@ -18,9 +20,10 @@
 		bottom: 0;
 		left: @header-height;
 		right: @header-height;
-		.truncate();
+		.text-truncate();
 		text-align: center;
 		line-height: @header-height;
+		// .flex();
 	}
 	.@{ns}header-btn,
 	.@{ns}header-btn-sm{
@@ -32,29 +35,64 @@
 		text-align: center;
 		display: inline-block;
 		border: none;
-		vertical-align: middle;		
+		vertical-align: middle;
+		// 后退按钮
+		&.@{ns}back:after,	
+		&[data-back]:after{
+			content: "";			
+			.arrow(#fff;12px;@border-width: 3px; @deg: 225deg);		
+		}	
+		// &.@{ns}back:before,	
+		// &[data-back]:before{
+		// 	content: "";
+		// 	display: inline-block;
+		// 	height: 100%;
+		// 	width: 0;
+		// 	vertical-align: middle;
+		// 	overflow: hidden;
+		// }
+		[class*="icon"]{
+			// font-size: 18px;
+		}		
 	}
 	.@{ns}header-btn{
 		height: @header-height;
 		line-height: @header-height;
-		min-width: 44px;	
-		&[data-back]{						
-			i{
-				font-size: 32px;
-				width: @header-height;
-				line-height: @header-height;
-			}
-		}	
+		min-width: 44px;
 	}
+	// 始终垂直居中
 	.@{ns}header-btn-sm{		
 		height: 32px;
 		line-height: 32px;
+		min-width: 32px;
 		border-radius: 2px;
-		padding: 0 8px;
+		padding: 0 8px;	
+		margin-left: 5px;
+		margin-right: 5px;
+		.translate(0,50%);
+		margin-top: -10px;
+		// background-color: #3c7;
 	}
 }
-.@{ns}scroller{
+@{ns}header-secondary{
+	height: @header-height-secondary;
+}
 
+// 用于iscroll
+.@{ns}scroller{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;	
+	-webkit-overflow-scrolling : touch;
+}
+.@{ns}header + .@{ns}scroller{
+	top: @header-height;
+}
+.@{ns}header-secondary + .@{ns}scroller{
+	top: @header-height + @header-height-secondary;
 }
 .@{ns}footer{
 	

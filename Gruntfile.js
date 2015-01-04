@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 				files: {
 					// 手机网站基础样式					
 					"css/core.css": "less/core.less",
-					"css/font-awesome.css": "font-awesome/font-awesome.less",
+					// "css/font-awesome.css": "font-awesome/font-awesome.less",
 					// // 手机网站前台样式
 					// "css/h5pages.css": "less/h5pages.less",
 					// // 会员中心
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');	
 	grunt.loadNpmTasks('grunt-contrib-less');		
 	// 调用任务
-	grunt.registerTask('buildcss', [ 'less' ]);
+	grunt.registerTask('default', [ 'less' ]);
 	grunt.registerTask('buildjs', [ 'concat' ]);
 	grunt.registerTask('buildall', [ 'less','concat' ]);
 } 

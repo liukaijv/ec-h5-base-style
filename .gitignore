@@ -1,5 +1,4 @@
-node_modules/
-bower_components/
+node_modules
+bower_components
 css/*.map
-less/core/*.map
-less/core/*.css
+font-awesome
