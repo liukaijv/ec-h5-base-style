@@ -468,6 +468,7 @@ hr {
   border-top: none;
   z-index: 100;
   -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
   transition: height 0.3s;
 }
 .ui-tabs-content .ui-tabs-panel {
@@ -478,6 +479,7 @@ hr {
   width: 100%;
   visibility: hidden;
   -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: translate(-100%, 0);
   -ms-transform: translate(-100%, 0);
@@ -516,6 +518,7 @@ hr {
 .ui-panel-page {
   position: fixed;
   -webkit-transition: margin-left 0.3s ease-in-out;
+  -moz-transition: margin-left 0.3s ease-in-out;
   transition: margin-left 0.3s ease-in-out;
 }
 .ui-panel-bar {
@@ -529,25 +532,17 @@ hr {
   z-index: 101;
   width: 30%;
   max-width: 100%;
-  background: #333333;
+  background: #ffffff;
+  overflow-x: hidden;
   overflow-y: auto;
   /* scrollable */
   -webkit-overflow-scrolling: touch;
   /* scrollable */
   -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
-.ui-panel-bar:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 1px;
-  background: #262626;
-}
-.ui-panel.ui-active .ui-panel-bar.ui--active {
+.ui-panel.ui-active .ui-panel-bar.ui-active {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
@@ -558,10 +553,6 @@ hr {
   -webkit-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
-}
-.ui-panel-bar-flip:after {
-  right: auto;
-  left: 0;
 }
 .ui-header {
   height: 44px;
