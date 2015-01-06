@@ -35,6 +35,7 @@
 	};
 
 	Panel.prototype = {
+
 		open: function() {
 			var $element = this.$element;
 			if (!$element.length || $element.hasClass('ui-active')) {
@@ -94,6 +95,7 @@
 			},
 			this));
 		},
+
 		close: function() {
 			var me = this;
 			var $html = $('html');
@@ -135,6 +137,7 @@
 			$element.off('click.panel.ui');
 			$html.off('.panel.ui');
 		},
+
 		events: function() {
 			$doc.on('click.panel.ui', '[data-close="panel"]', $.proxy(function(e) {
 				e.preventDefault();
@@ -147,6 +150,7 @@
 			// },
 			// this));
 		},
+		
 		toggle: function(){
 			this.active ? this.close() : this.open();
 		}
@@ -170,4 +174,4 @@
 		});
 	}	
 	
-})(window.jQuery || window.Zepto);
+})(jQuery);

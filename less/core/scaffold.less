@@ -37,8 +37,8 @@
 		border: none;
 		vertical-align: middle;
 		// 后退按钮
-		&.@{ns}back:after,	
-		&[data-back]:after{
+		// &[data-back]:after,
+		&.@{ns}back:after{
 			content: "";			
 			.arrow(#fff;12px;@border-width: 3px; @deg: 225deg);		
 		}	
@@ -74,7 +74,7 @@
 		// background-color: #3c7;
 	}
 }
-@{ns}header-secondary{
+.@{ns}header-secondary{
 	height: @header-height-secondary;
 }
 

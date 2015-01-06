@@ -444,7 +444,7 @@ hr {
   -ms-order: 42;
   order: 42;
 }
-.ui-tabs {
+.ui-tabs-nav {
   margin: 0;
   padding: 0;
   height: 44px;
@@ -455,11 +455,11 @@ hr {
   table-layout: fixed;
   border-bottom: 1px solid #eee;
 }
-.ui-tabs > .col,
-.ui-tabs > * {
+.ui-tabs-nav > .col,
+.ui-tabs-nav > * {
   display: table-cell;
 }
-.ui-tabs li a {
+.ui-tabs-nav li a {
   display: block;
 }
 .ui-tabs-content {
@@ -535,9 +535,7 @@ hr {
   background: #ffffff;
   overflow-x: hidden;
   overflow-y: auto;
-  /* scrollable */
   -webkit-overflow-scrolling: touch;
-  /* scrollable */
   -webkit-transition: transform 0.3s ease-in-out;
   -moz-transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
@@ -601,9 +599,7 @@ hr {
   vertical-align: middle;
 }
 .ui-header .ui-header-btn.ui-back:after,
-.ui-header .ui-header-btn-sm.ui-back:after,
-.ui-header .ui-header-btn[data-back]:after,
-.ui-header .ui-header-btn-sm[data-back]:after {
+.ui-header .ui-header-btn-sm.ui-back:after {
   content: "";
   display: inline-block;
   width: 12px;
@@ -633,7 +629,7 @@ hr {
   transform: translate(0, 50%);
   margin-top: -10px;
 }
-ui-header-secondary {
+.ui-header-secondary {
   height: 44px;
 }
 .ui-scroller {
