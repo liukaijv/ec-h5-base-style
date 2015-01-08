@@ -462,6 +462,11 @@ hr {
 .ui-tabs-nav li a {
   display: block;
 }
+.ui-tabs-nav li.ui-active a {
+  outline: thin dotted #333;
+  outline: 4px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
 .ui-tabs-content {
   position: relative;
   overflow: hidden;
@@ -520,8 +525,12 @@ hr {
   -webkit-transition: margin-left 0.3s ease-in-out;
   -moz-transition: margin-left 0.3s ease-in-out;
   transition: margin-left 0.3s ease-in-out;
+  overflow: hidden;
 }
 .ui-panel-bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -532,7 +541,7 @@ hr {
   z-index: 101;
   width: 30%;
   max-width: 100%;
-  background: #ffffff;
+  background: #333333;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -610,6 +619,33 @@ hr {
   -ms-transform: rotate(225deg);
   transform: rotate(225deg);
   min-width: auto;
+}
+.ui-header .ui-header-btn.ui-menu:after,
+.ui-header .ui-header-btn-sm.ui-menu:after,
+.ui-header .ui-header-btn.ui-menu:before,
+.ui-header .ui-header-btn-sm.ui-menu:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  top: 54%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.ui-header .ui-header-btn.ui-menu:before,
+.ui-header .ui-header-btn-sm.ui-menu:before {
+  background-color: transparent;
+  border-top: 3px solid rgba(255, 255, 255, 0.95);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.95);
+  margin-top: -10px;
+  height: 4px;
+}
+.ui-header .ui-header-btn.ui-menu:after,
+.ui-header .ui-header-btn-sm.ui-menu:after {
+  margin-top: 4px;
+  height: 3px;
 }
 .ui-header .ui-header-btn {
   height: 44px;

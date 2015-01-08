@@ -25,6 +25,7 @@
 		line-height: @header-height;
 		// .flex();
 	}
+	// 头部button
 	.@{ns}header-btn,
 	.@{ns}header-btn-sm{
 		.box-sizing();
@@ -42,6 +43,31 @@
 			content: "";			
 			.arrow(#fff;12px;@border-width: 3px; @deg: 225deg);		
 		}	
+		// 菜单图标 
+		@icon-menu-height: 3px;
+		@icon-menu-bg: rgba(255, 255, 255, .95);
+		&.@{ns}menu:after,
+		&.@{ns}menu:before{
+			content: "";
+			position: absolute;
+			left: 50%;
+			width: 22px;
+			top: 54%;
+			.translate(-50%,0);		
+			background-color: @icon-menu-bg; 
+			// border-radius: 1px;							
+		}				
+		&.@{ns}menu:before {			
+			background-color: transparent;
+			border-top: @icon-menu-height solid @icon-menu-bg;
+			border-bottom: @icon-menu-height solid @icon-menu-bg;
+			margin-top: -(3*@icon-menu-height + 1);
+			height: @icon-menu-height + 1;
+		}
+		&.@{ns}menu:after {			
+			margin-top: @icon-menu-height + 1;
+			height: @icon-menu-height;
+		}
 		// &.@{ns}back:before,	
 		// &[data-back]:before{
 		// 	content: "";
@@ -60,7 +86,7 @@
 		line-height: @header-height;
 		min-width: 44px;
 	}
-	// 始终垂直居中
+	// sm button
 	.@{ns}header-btn-sm{		
 		height: 32px;
 		line-height: 32px;
@@ -69,6 +95,7 @@
 		padding: 0 8px;	
 		margin-left: 5px;
 		margin-right: 5px;
+		// 始终垂直居中
 		.translate(0,50%);
 		margin-top: -10px;
 		// background-color: #3c7;

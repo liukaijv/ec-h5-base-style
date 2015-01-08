@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="css/core.css">
 <script>
 
+$(function(){
+	$('[data-toggle="panel"]').panel();
+	$('[data-role="tabs"]').tabs();
+	$('[data-role="button"]').button({});	
+})
+
 </script>
 </head>
 <body>
@@ -24,10 +30,37 @@
 	<div class="ui-header">
 		<a href="#" class="ui-header-btn left ui-back">				
 		</a>
-		<div class="ui-title">商品列表</div>
+		<div class="ui-title">H5商城</div>
+		<a href="#panel" class="ui-header-btn right ui-menu" data-toggle="panel">				
+		</a>
 	</div>	
 
+	<div class="ui-tabs">
+		<ul class="ui-tabs-nav" data-role="tabs">
+			<li><a href="#tab1">商品列表</a></li>
+			<li><a href="#tab2">商品详情</a></li>
+			<li><a href="#tab3">评论列表</a></li>
+		</ul>
+		<div class="ui-tabs-content">
+			<div class="ui-tabs-panel" id="tab1">
+				<div class="ui-btn" data-role="button">afasf</div>
+			</div>
+			<div class="ui-tabs-panel" id="tab2">
+				tab2
+			</div>
+			<div class="ui-tabs-panel" id="tab3">
+				tab3
+			</div>
+		</div>
+	</div>
+
 </div>	
+
+<div class="ui-panel" id="panel">
+	<div class="ui-panel-bar">
 	
+	</div>
+</div>
+
 </body>
 </html>

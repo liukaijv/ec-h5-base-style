@@ -16,10 +16,12 @@
 
 .@{ns}panel-page {
   position: fixed;
-  .transition(margin-left 0.3s ease-in-out);  
+  .transition(margin-left 0.3s ease-in-out); 
+  overflow: hidden; 
 }
 
 .@{ns}panel-bar {
+  .box-sizing(border-box);
   position: fixed;
   top: 0;
   bottom: 0;

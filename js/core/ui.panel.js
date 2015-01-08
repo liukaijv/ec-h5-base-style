@@ -145,10 +145,10 @@
 			}, this));
 
 			// resize 时关闭
-			// $win.on('resize.panel.ui orientationchange.panel.ui', $.proxy(function(e) {
-			// 	this.active && this.close();
-			// },
-			// this));
+			$win.on('resize.panel.ui orientationchange.panel.ui', $.proxy(function(e) {
+				this.active && this.close();
+			},
+			this));
 		},
 		
 		toggle: function(){
@@ -168,8 +168,9 @@
 				$trigger.data('ui.panel', plugin);
 			}
 			// todo 对后来加的无效
-			$trigger.on('click',function(){				
-				plugin.toggle();
+			$trigger.on('click',function(e){	
+				e.preventDefault();			
+				plugin.toggle();				
 			});
 		});
 	}	

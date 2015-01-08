@@ -10,7 +10,8 @@
 	var Button = function(element, options){
 		this.$element = $(element);
 		this.options = $.extend({}, Button.DEFAULTS, options);
-		this.isloading = false;		
+		this.isloading = false;
+		this.init();		
 	}
 
 	Button.DEFAULTS = {
@@ -24,6 +25,10 @@
 	}
 
 	Button.prototype = {
+
+		init:function() {
+			
+		},
 
 		// state = loading || reset
 		setState: function(state){
@@ -87,7 +92,7 @@
 
 			var $this = $(this);
 			var data = $this.data('ui.button');
-			var options = typeof option == 'object' && {};
+			var options = typeof option == 'object' && {};			
 
 			if(!data){
 				$this.data('ui.button', (data = new Button(this, options)));

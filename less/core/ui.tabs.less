@@ -8,8 +8,13 @@
   border-bottom: 1px solid #eee;
   li{    
     a{
-      display: block;         
+      display: block;            
     }
+    &.@{ns}active{
+      a{
+        .tab-focus();
+      } 
+    }   
   }
 }
 .@{ns}tabs-content {

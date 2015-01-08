@@ -1,5 +1,6 @@
 // 选项卡插件
 
+// <div class="ui-tabs">
 // <ul class="ui-tabs-nav">
 // 	<li><a href="#">tab1</a></li>
 // 	<li><a href="#">tab2</a></li>
@@ -12,6 +13,7 @@
 // 	</div>
 // 	<div class="ui-tabs-panel" id="tab3">
 // 	</div>
+// </div>
 // </div>
 
 (function($){
@@ -91,7 +93,7 @@
 		  this.activate($nav.closest('li'), $tabNav);
 
 		  // activate Tab content
-		  this.activate($target, $tabContent, function() {
+		  this.activate($target, $tabContent, function() {		  	
 		  	$nav.trigger({
 		  		type: 'opened.tabs.ui',
 		  		relatedTarget: previous

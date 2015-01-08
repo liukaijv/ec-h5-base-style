@@ -150,6 +150,8 @@ var UI = UI || {};
 		return uid;
 	};
 
+	$.support.transition = UI.support.transition ;
+
 	// http://blog.alexmaccaw.com/css-transitions
 	$.fn.emulateTransitionEnd = function(duration) {
 		var called = false;
